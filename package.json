@@ -1,0 +1,31 @@
+{
+  "name": "typescript-algorithms",
+  "version": "1.0.0",
+  "description": "algorithms and data-structure implementation in TypeScript",
+  "main": "no",
+  "dependencies": {
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest ./src/ --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiandev/typescript-algorithms.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Algorithms",
+    "data-Strcuture",
+    "2020"
+  ],
+  "author": "Aian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aiandev/typescript-algorithms/issues"
+  },
+  "homepage": "https://github.com/aiandev/typescript-algorithms#readme"
+}
