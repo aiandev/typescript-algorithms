@@ -10,4 +10,6 @@ export interface ILinkedList {
     //TODO: implement test
     deleteHead: () => ILinkedListNode | null;
     deleteTail: () => ILinkedListNode | null;
+    isEmpty: () => Boolean;
+    toArray: () => any[];
 }

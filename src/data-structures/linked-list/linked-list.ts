@@ -70,6 +70,7 @@ export default class LinkedList implements ILinkedList {
     while (this.head && this.compare.equal(this.head.value, value)) {
       deletedNode = this.head;
       this.head   = this.head?.next || null;
+      this.count--;
     }
 
     let currentNode = this.head;
@@ -78,6 +79,7 @@ export default class LinkedList implements ILinkedList {
       // If next node must be deleted then make next node to be a next next one.
       while (currentNode.next) {
         if (this.compare.equal(currentNode.next.value, value)) {
+          this.count--;
           deletedNode = currentNode.next;
           currentNode.next = currentNode.next.next;
         } else {
@@ -124,6 +126,7 @@ export default class LinkedList implements ILinkedList {
     if (this.isEmpty()) return null;
 
     const deletedTail = this.tail;
+    this.count--;
 
     // There is only one node in linked list.
     if (this.head === this.tail) {
@@ -156,7 +159,7 @@ export default class LinkedList implements ILinkedList {
     if (!this.head) {
       return null;
     }
-
+    this.count--;
     const deletedHead = this.head;
 
     if (this.head.next) {
