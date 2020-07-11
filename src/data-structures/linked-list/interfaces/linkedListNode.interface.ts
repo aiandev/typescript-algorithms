@@ -1,6 +1,5 @@
 export interface ILinkedListNode {
-    value: any;
-    next: ILinkedListNode | null;
-    toString: () => String
-  }
-  
+  value: any;
+  next: ILinkedListNode | null;
+  toString: () => string;
+}

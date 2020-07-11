@@ -1,5 +1,5 @@
-import LinkedList from "../linked-list/linked-list";
-import { ILinkedList } from "../linked-list/interfaces/linkedList.interface";
+import LinkedList from '../linked-list/linked-list';
+import { ILinkedList } from '../linked-list/interfaces/linkedList.interface';
 
 export default class Stack {
   public linkedList: ILinkedList = new LinkedList();
@@ -20,7 +20,7 @@ export default class Stack {
   /**
    * @param {*} value
    */
-  push(value:any): void {
+  push(value: string | any): void {
     // Pushing means to lay the value on top of the stack. Therefore let's just add
     // the new value at the start of the linked list.
     this.linkedList.prepend(value);
@@ -29,7 +29,7 @@ export default class Stack {
   /**
    * @return {any}
    */
-  pop():any {
+  pop(): any {
     // TODO: throw error if stack is empty
     // if(this.linkedList.isEmpty()){
     //   throw Error('Trying POP from empty Stack')
@@ -41,23 +41,21 @@ export default class Stack {
   /**
    * @return {any[]}
    */
-  toArray() {
-    return this.linkedList
-      .toArray()
-      .map(linkedListNode => linkedListNode.value);
+  toArray(): any[] {
+    return this.linkedList.toArray().map((linkedListNode) => linkedListNode.value);
   }
 
   /**
    * @return {string}
    */
-  toString() {
+  toString(): string {
     return this.linkedList.toString();
   }
 
   /**
    * @return {boolean}
    */
-  isEmpty(): Boolean {
+  isEmpty(): boolean {
     return this.linkedList.isEmpty();
   }
 }

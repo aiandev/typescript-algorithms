@@ -1,23 +1,18 @@
-import Stack from "../stack";
+import Stack from '../stack';
 
-
-function checkIfStrBalance(str: String,openChar = '(' , closeChar =')'){
-    let stack = new Stack();
-    for (let i = 0; i < str.length; i++) {
-
-        if(str.charAt(i) == openChar){
-            stack.push(openChar)
-        }
-
-        if(str.charAt(i) == closeChar){
-            // if the stack is empty and there
-            if(stack.isEmpty()) return false
-            stack.pop()
-        }
-        
+export const checkIfStrBalance = (str: string, openChar = `(`, closeChar = `)`): boolean => {
+  const stack = new Stack();
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === openChar) {
+      stack.push(openChar);
     }
 
-    return stack.isEmpty() ? true : false;
-}
+    if (str.charAt(i) === closeChar) {
+      // if the stack is empty and there
+      if (stack.isEmpty()) return false;
+      stack.pop();
+    }
+  }
 
-export default checkIfStrBalance;
+  return stack.isEmpty() ? true : false;
+};

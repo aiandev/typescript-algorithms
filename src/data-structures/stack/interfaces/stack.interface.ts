@@ -1,6 +1,6 @@
-export interface IStack{
-    peek:() => any;
-    push:() => any;
-    pop:() => any;
-    isEmpty:()=> Boolean
+export interface IStack {
+  peek: () => any;
+  push: () => any;
+  pop: () => any;
+  isEmpty: () => boolean;
 }

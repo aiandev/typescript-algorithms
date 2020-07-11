@@ -1,18 +1,16 @@
-import Stack from "../stack";
+import Stack from '../stack';
 
+export const reversString = (str: string): string => {
+  const stack = new Stack();
 
-function reversString(str: String){
-    let stack = new Stack();
-    for (const charIndex in str) {
-        stack.push(str[charIndex])
-    }
+  for (const char of str) {
+    stack.push(char);
+  }
 
-    let stringRevered = '';
-    while(!stack.isEmpty()){
-        stringRevered += stack.pop()
-    }
+  let stringRevered = ``;
+  while (!stack.isEmpty()) {
+    stringRevered += stack.pop();
+  }
 
-    return stringRevered;
-}
-
-export default reversString;
+  return stringRevered;
+};

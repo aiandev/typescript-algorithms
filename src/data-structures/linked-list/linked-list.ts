@@ -14,7 +14,7 @@ export default class LinkedList implements ILinkedList {
    * @param {any} value
    * @return {ILinkedList}
    */
-  append(value: any): ILinkedList {
+  append(value: string | any): ILinkedList {
     const newNode = new LinkedListNode(value);
 
     // If there is no head yet
@@ -40,7 +40,7 @@ export default class LinkedList implements ILinkedList {
    * @param {*} value
    * @return {ILinkedList}
    */
-  prepend(value: any) {
+  prepend(value: string | any): ILinkedList {
     // Create new node to be a head with next reference.
     const newNode = new LinkedListNode(value, this.head);
 
@@ -59,17 +59,16 @@ export default class LinkedList implements ILinkedList {
    * @param {any} value
    * @return {ILinkedListNode}
    */
-  public delete(value: any): ILinkedListNode | null {
-   
+  public delete(value: string | any): ILinkedListNode | null {
     if (!this.head) {
       return null;
     }
 
     let deletedNode = null;
-    //If the head must be deleted then make next node that is differ
+    // If the head must be deleted then make next node that is differ
     while (this.head && this.compare.equal(this.head.value, value)) {
       deletedNode = this.head;
-      this.head   = this.head?.next || null;
+      this.head = this.head?.next || null;
       this.count--;
     }
 
@@ -100,7 +99,7 @@ export default class LinkedList implements ILinkedList {
    * @param {*} value
    * @return {ILinkedListNode|null}
    */
-  find(value: any): ILinkedListNode | null {
+  find(value: string | any): ILinkedListNode | null {
     if (this.isEmpty()) {
       return null;
     }
@@ -155,7 +154,7 @@ export default class LinkedList implements ILinkedList {
   /**
    * @return {ILinkedListNode| null}
    */
-  deleteHead():ILinkedListNode | null {
+  deleteHead(): ILinkedListNode | null {
     if (!this.head) {
       return null;
     }
@@ -197,7 +196,7 @@ export default class LinkedList implements ILinkedList {
   /**
    * @return {String}
    */
-  toString(): String {
+  toString(): string {
     return this.toArray()
       .map((node) => node.toString())
       .toString();
@@ -206,8 +205,8 @@ export default class LinkedList implements ILinkedList {
   /**
    * Reverse a linked list.
    * @returns {ILinkedList}
-  */
-  reverse():ILinkedList {
+   */
+  reverse(): ILinkedList {
     let currNode = this.head;
     let prevNode = null;
     let nextNode = null;
@@ -231,16 +230,11 @@ export default class LinkedList implements ILinkedList {
     return this;
   }
 
-  public isEmpty(): Boolean {
-    return this.size() == 0 ? true : false;
+  public isEmpty(): boolean {
+    return this.size() === 0 ? true : false;
   }
 
-  private size(): Number {
+  private size(): number {
     return this.count;
   }
-
-  // private isValueOfHead(value: any): Boolean {
-  //   return Boolean();
-  // }
-
 }
