@@ -12,7 +12,8 @@
     "@types/jest": "^26.0.4"
   },
   "scripts": {
-    "test": "jest ./src/ --watchAll"
+    "test": "jest ./src/",
+    "test-dev": "jest ./src/ --watchAll"
   },
   "repository": {
     "type": "git",
