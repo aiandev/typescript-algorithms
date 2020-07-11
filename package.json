@@ -8,7 +8,9 @@
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.4"
+  },
   "scripts": {
     "test": "jest ./src/ --watchAll"
   },
