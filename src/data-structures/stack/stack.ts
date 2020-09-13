@@ -18,7 +18,7 @@ export default class Stack {
   }
 
   /**
-   * @param {*} value
+   * @param {any} value
    */
   push(value: string | any): void {
     // Pushing means to lay the value on top of the stack. Therefore let's just add
